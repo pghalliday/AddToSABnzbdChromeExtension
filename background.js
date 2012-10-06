@@ -5,16 +5,16 @@ var REQUEST_TIMEOUT = 5000;
  */
 function getClickHandler() {
   return function(info) {
-    var request = new XMLHttpRequest();
     var host = localStorage["host"];
-    var port = localStorage["port"];
-    var https = localStorage["host"] === "true";
-    var user = localStorage["user"];
-    var password = localStorage["password"];
-    var apikey = localStorage["apikey"];
-    var url;
 
     if (host) {   
+      var port = localStorage["port"];
+      var https = localStorage["host"] === "true";
+      var user = localStorage["user"];
+      var password = localStorage["password"];
+      var apikey = localStorage["apikey"];
+      var url;
+      
       if (https) {
         url = "https://";
       } else {
@@ -33,6 +33,7 @@ function getClickHandler() {
         url += "&apikey=" + encodeURIComponent(apikey);
       }
 
+      var request = new XMLHttpRequest();
       request.open("GET", url, true);
       var requestTimer = setTimeout(function() {
         request.abort();
