@@ -1,0 +1,19 @@
+{
+  "name": "Add to SABnzbd",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Context menu entry to add an NZB file URL to your SABnzbd instance",
+  "background" : { "scripts": ["background.js"] },
+  "options_page": "options.html",
+  "permissions" : [
+    "contextMenus",
+    "http://*/",
+    "https://*/"
+   ],
+  "icons": {
+    "16": "sab2_16.png",
+    "48": "sab2_64.png",
+    "128": "sab2_128.png"
+  },
+  "minimum_chrome_version" : "6.0.0.0"
+}
